@@ -14,6 +14,8 @@
     // Initialization code
     self.layer.cornerRadius = 2;
     self.clipsToBounds = YES;
+    self.bookTitle.layer.cornerRadius = 2;
+    self.bookTitle.clipsToBounds = YES;
 }
 
 @end
