@@ -1,0 +1,515 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5364E3E21B5C7F370060FF18 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5364E3E11B5C7F370060FF18 /* main.m */; };
+		5364E3E51B5C7F370060FF18 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5364E3E41B5C7F370060FF18 /* AppDelegate.m */; };
+		5364E3EB1B5C7F370060FF18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5364E3E91B5C7F370060FF18 /* Main.storyboard */; };
+		5364E3ED1B5C7F370060FF18 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5364E3EC1B5C7F370060FF18 /* Images.xcassets */; };
+		5364E3F01B5C7F370060FF18 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5364E3EE1B5C7F370060FF18 /* LaunchScreen.xib */; };
+		5364E3FC1B5C7F370060FF18 /* iShelterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5364E3FB1B5C7F370060FF18 /* iShelterTests.m */; };
+		5364E4071B5C7F8A0060FF18 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5364E4061B5C7F8A0060FF18 /* CollectionViewController.m */; };
+		5364E40B1B5C83E60060FF18 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5364E4091B5C83E60060FF18 /* CollectionViewCell.m */; };
+		5364E40C1B5C83E60060FF18 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5364E40A1B5C83E60060FF18 /* CollectionViewCell.xib */; };
+		5364E4121B5C91A30060FF18 /* 钢铁是怎样炼成的.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5364E40E1B5C91A20060FF18 /* 钢铁是怎样炼成的.txt */; };
+		5364E4131B5C91A30060FF18 /* 百年孤独.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5364E40F1B5C91A30060FF18 /* 百年孤独.txt */; };
+		5364E4141B5C91A30060FF18 /* 左耳.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5364E4101B5C91A30060FF18 /* 左耳.txt */; };
+		5364E4151B5C91A30060FF18 /* 沙漏.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5364E4111B5C91A30060FF18 /* 沙漏.txt */; };
+		5364E41B1B5CC1D90060FF18 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5364E41A1B5CC1D90060FF18 /* PageViewController.m */; };
+		5364E4211B5CD8320060FF18 /* WZLPageTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5364E4201B5CD8320060FF18 /* WZLPageTextView.m */; };
+		5364E4241B5CD94C0060FF18 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5364E4221B5CD9040060FF18 /* CoreText.framework */; };
+		5364E42A1B5CE2D10060FF18 /* PageDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5364E4291B5CE2D10060FF18 /* PageDataViewController.m */; };
+		5364E42D1B5CE4D80060FF18 /* WZLGlobalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5364E42C1B5CE4D80060FF18 /* WZLGlobalModel.m */; };
+		5364E4301B5CE61F0060FF18 /* PageModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5364E42F1B5CE61F0060FF18 /* PageModelViewController.m */; };
+		5364E4331B5CEA540060FF18 /* NSString+WZLPaging.m in Sources */ = {isa = PBXBuildFile; fileRef = 5364E4321B5CEA540060FF18 /* NSString+WZLPaging.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5364E3F61B5C7F370060FF18 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5364E3D41B5C7F370060FF18 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5364E3DB1B5C7F370060FF18;
+			remoteInfo = iShelter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5364E3DC1B5C7F370060FF18 /* iShelter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iShelter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5364E3E01B5C7F370060FF18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5364E3E11B5C7F370060FF18 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5364E3E31B5C7F370060FF18 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5364E3E41B5C7F370060FF18 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5364E3EA1B5C7F370060FF18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5364E3EC1B5C7F370060FF18 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5364E3EF1B5C7F370060FF18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		5364E3F51B5C7F370060FF18 /* iShelterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iShelterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5364E3FA1B5C7F370060FF18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5364E3FB1B5C7F370060FF18 /* iShelterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iShelterTests.m; sourceTree = "<group>"; };
+		5364E4051B5C7F8A0060FF18 /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
+		5364E4061B5C7F8A0060FF18 /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
+		5364E4081B5C83E60060FF18 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		5364E4091B5C83E60060FF18 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		5364E40A1B5C83E60060FF18 /* CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		5364E40E1B5C91A20060FF18 /* 钢铁是怎样炼成的.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "钢铁是怎样炼成的.txt"; sourceTree = "<group>"; };
+		5364E40F1B5C91A30060FF18 /* 百年孤独.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "百年孤独.txt"; sourceTree = "<group>"; };
+		5364E4101B5C91A30060FF18 /* 左耳.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "左耳.txt"; sourceTree = "<group>"; };
+		5364E4111B5C91A30060FF18 /* 沙漏.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "沙漏.txt"; sourceTree = "<group>"; };
+		5364E4191B5CC1D90060FF18 /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
+		5364E41A1B5CC1D90060FF18 /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
+		5364E41F1B5CD8320060FF18 /* WZLPageTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZLPageTextView.h; sourceTree = "<group>"; };
+		5364E4201B5CD8320060FF18 /* WZLPageTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZLPageTextView.m; sourceTree = "<group>"; };
+		5364E4221B5CD9040060FF18 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		5364E4281B5CE2D10060FF18 /* PageDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageDataViewController.h; sourceTree = "<group>"; };
+		5364E4291B5CE2D10060FF18 /* PageDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageDataViewController.m; sourceTree = "<group>"; };
+		5364E42B1B5CE4D80060FF18 /* WZLGlobalModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZLGlobalModel.h; sourceTree = "<group>"; };
+		5364E42C1B5CE4D80060FF18 /* WZLGlobalModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZLGlobalModel.m; sourceTree = "<group>"; };
+		5364E42E1B5CE61F0060FF18 /* PageModelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageModelViewController.h; sourceTree = "<group>"; };
+		5364E42F1B5CE61F0060FF18 /* PageModelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageModelViewController.m; sourceTree = "<group>"; };
+		5364E4311B5CEA540060FF18 /* NSString+WZLPaging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+WZLPaging.h"; sourceTree = "<group>"; };
+		5364E4321B5CEA540060FF18 /* NSString+WZLPaging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WZLPaging.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5364E3D91B5C7F370060FF18 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5364E4241B5CD94C0060FF18 /* CoreText.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5364E3F21B5C7F370060FF18 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5364E3D31B5C7F370060FF18 = {
+			isa = PBXGroup;
+			children = (
+				5364E4221B5CD9040060FF18 /* CoreText.framework */,
+				5364E3DE1B5C7F370060FF18 /* iShelter */,
+				5364E3F81B5C7F370060FF18 /* iShelterTests */,
+				5364E3DD1B5C7F370060FF18 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5364E3DD1B5C7F370060FF18 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5364E3DC1B5C7F370060FF18 /* iShelter.app */,
+				5364E3F51B5C7F370060FF18 /* iShelterTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5364E3DE1B5C7F370060FF18 /* iShelter */ = {
+			isa = PBXGroup;
+			children = (
+				5364E3E31B5C7F370060FF18 /* AppDelegate.h */,
+				5364E3E41B5C7F370060FF18 /* AppDelegate.m */,
+				5364E3E91B5C7F370060FF18 /* Main.storyboard */,
+				5364E3EC1B5C7F370060FF18 /* Images.xcassets */,
+				5364E3EE1B5C7F370060FF18 /* LaunchScreen.xib */,
+				5364E3DF1B5C7F370060FF18 /* Supporting Files */,
+				5364E4051B5C7F8A0060FF18 /* CollectionViewController.h */,
+				5364E4061B5C7F8A0060FF18 /* CollectionViewController.m */,
+				5364E4191B5CC1D90060FF18 /* PageViewController.h */,
+				5364E41A1B5CC1D90060FF18 /* PageViewController.m */,
+				5364E4281B5CE2D10060FF18 /* PageDataViewController.h */,
+				5364E4291B5CE2D10060FF18 /* PageDataViewController.m */,
+				5364E42E1B5CE61F0060FF18 /* PageModelViewController.h */,
+				5364E42F1B5CE61F0060FF18 /* PageModelViewController.m */,
+				5364E40D1B5C87E40060FF18 /* CollectionViewCell */,
+				5364E4271B5CD9D50060FF18 /* WZL */,
+			);
+			path = iShelter;
+			sourceTree = "<group>";
+		};
+		5364E3DF1B5C7F370060FF18 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5364E40E1B5C91A20060FF18 /* 钢铁是怎样炼成的.txt */,
+				5364E40F1B5C91A30060FF18 /* 百年孤独.txt */,
+				5364E4101B5C91A30060FF18 /* 左耳.txt */,
+				5364E4111B5C91A30060FF18 /* 沙漏.txt */,
+				5364E3E01B5C7F370060FF18 /* Info.plist */,
+				5364E3E11B5C7F370060FF18 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5364E3F81B5C7F370060FF18 /* iShelterTests */ = {
+			isa = PBXGroup;
+			children = (
+				5364E3FB1B5C7F370060FF18 /* iShelterTests.m */,
+				5364E3F91B5C7F370060FF18 /* Supporting Files */,
+			);
+			path = iShelterTests;
+			sourceTree = "<group>";
+		};
+		5364E3F91B5C7F370060FF18 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5364E3FA1B5C7F370060FF18 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5364E40D1B5C87E40060FF18 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				5364E4081B5C83E60060FF18 /* CollectionViewCell.h */,
+				5364E4091B5C83E60060FF18 /* CollectionViewCell.m */,
+				5364E40A1B5C83E60060FF18 /* CollectionViewCell.xib */,
+			);
+			name = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		5364E4271B5CD9D50060FF18 /* WZL */ = {
+			isa = PBXGroup;
+			children = (
+				5364E41F1B5CD8320060FF18 /* WZLPageTextView.h */,
+				5364E4201B5CD8320060FF18 /* WZLPageTextView.m */,
+				5364E42B1B5CE4D80060FF18 /* WZLGlobalModel.h */,
+				5364E42C1B5CE4D80060FF18 /* WZLGlobalModel.m */,
+				5364E4311B5CEA540060FF18 /* NSString+WZLPaging.h */,
+				5364E4321B5CEA540060FF18 /* NSString+WZLPaging.m */,
+			);
+			name = WZL;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5364E3DB1B5C7F370060FF18 /* iShelter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5364E3FF1B5C7F370060FF18 /* Build configuration list for PBXNativeTarget "iShelter" */;
+			buildPhases = (
+				5364E3D81B5C7F370060FF18 /* Sources */,
+				5364E3D91B5C7F370060FF18 /* Frameworks */,
+				5364E3DA1B5C7F370060FF18 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iShelter;
+			productName = iShelter;
+			productReference = 5364E3DC1B5C7F370060FF18 /* iShelter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5364E3F41B5C7F370060FF18 /* iShelterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5364E4021B5C7F370060FF18 /* Build configuration list for PBXNativeTarget "iShelterTests" */;
+			buildPhases = (
+				5364E3F11B5C7F370060FF18 /* Sources */,
+				5364E3F21B5C7F370060FF18 /* Frameworks */,
+				5364E3F31B5C7F370060FF18 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5364E3F71B5C7F370060FF18 /* PBXTargetDependency */,
+			);
+			name = iShelterTests;
+			productName = iShelterTests;
+			productReference = 5364E3F51B5C7F370060FF18 /* iShelterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5364E3D41B5C7F370060FF18 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = wangzhilong;
+				TargetAttributes = {
+					5364E3DB1B5C7F370060FF18 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					5364E3F41B5C7F370060FF18 = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = 5364E3DB1B5C7F370060FF18;
+					};
+				};
+			};
+			buildConfigurationList = 5364E3D71B5C7F370060FF18 /* Build configuration list for PBXProject "iShelter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5364E3D31B5C7F370060FF18;
+			productRefGroup = 5364E3DD1B5C7F370060FF18 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5364E3DB1B5C7F370060FF18 /* iShelter */,
+				5364E3F41B5C7F370060FF18 /* iShelterTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5364E3DA1B5C7F370060FF18 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5364E3EB1B5C7F370060FF18 /* Main.storyboard in Resources */,
+				5364E3F01B5C7F370060FF18 /* LaunchScreen.xib in Resources */,
+				5364E40C1B5C83E60060FF18 /* CollectionViewCell.xib in Resources */,
+				5364E3ED1B5C7F370060FF18 /* Images.xcassets in Resources */,
+				5364E4151B5C91A30060FF18 /* 沙漏.txt in Resources */,
+				5364E4131B5C91A30060FF18 /* 百年孤独.txt in Resources */,
+				5364E4141B5C91A30060FF18 /* 左耳.txt in Resources */,
+				5364E4121B5C91A30060FF18 /* 钢铁是怎样炼成的.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5364E3F31B5C7F370060FF18 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5364E3D81B5C7F370060FF18 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5364E4211B5CD8320060FF18 /* WZLPageTextView.m in Sources */,
+				5364E3E51B5C7F370060FF18 /* AppDelegate.m in Sources */,
+				5364E42D1B5CE4D80060FF18 /* WZLGlobalModel.m in Sources */,
+				5364E4331B5CEA540060FF18 /* NSString+WZLPaging.m in Sources */,
+				5364E3E21B5C7F370060FF18 /* main.m in Sources */,
+				5364E42A1B5CE2D10060FF18 /* PageDataViewController.m in Sources */,
+				5364E4301B5CE61F0060FF18 /* PageModelViewController.m in Sources */,
+				5364E40B1B5C83E60060FF18 /* CollectionViewCell.m in Sources */,
+				5364E41B1B5CC1D90060FF18 /* PageViewController.m in Sources */,
+				5364E4071B5C7F8A0060FF18 /* CollectionViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5364E3F11B5C7F370060FF18 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5364E3FC1B5C7F370060FF18 /* iShelterTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5364E3F71B5C7F370060FF18 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5364E3DB1B5C7F370060FF18 /* iShelter */;
+			targetProxy = 5364E3F61B5C7F370060FF18 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5364E3E91B5C7F370060FF18 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5364E3EA1B5C7F370060FF18 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5364E3EE1B5C7F370060FF18 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5364E3EF1B5C7F370060FF18 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5364E3FD1B5C7F370060FF18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5364E3FE1B5C7F370060FF18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5364E4001B5C7F370060FF18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = iShelter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5364E4011B5C7F370060FF18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = iShelter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		5364E4031B5C7F370060FF18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = iShelterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iShelter.app/iShelter";
+			};
+			name = Debug;
+		};
+		5364E4041B5C7F370060FF18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = iShelterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iShelter.app/iShelter";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5364E3D71B5C7F370060FF18 /* Build configuration list for PBXProject "iShelter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5364E3FD1B5C7F370060FF18 /* Debug */,
+				5364E3FE1B5C7F370060FF18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5364E3FF1B5C7F370060FF18 /* Build configuration list for PBXNativeTarget "iShelter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5364E4001B5C7F370060FF18 /* Debug */,
+				5364E4011B5C7F370060FF18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5364E4021B5C7F370060FF18 /* Build configuration list for PBXNativeTarget "iShelterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5364E4031B5C7F370060FF18 /* Debug */,
+				5364E4041B5C7F370060FF18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5364E3D41B5C7F370060FF18 /* Project object */;
+}
