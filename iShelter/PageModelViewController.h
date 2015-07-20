@@ -13,6 +13,8 @@
 
 @property (weak, nonatomic)PageViewController *readerViewcontroller;
 @property (strong, nonatomic)NSArray *pageData;
+@property (strong, nonatomic) NSString *text;
+@property (strong, nonatomic) NSDictionary *attributes;
 
 - (PageDataViewController *)viewControllerAtIndex:(NSUInteger)index;
 

@@ -15,5 +15,11 @@
 @property (strong, nonatomic) NSDictionary *attributes;
 @property (assign, nonatomic) CGFloat fontSize;
 @property (assign, nonatomic) NSInteger currentPage;
+@property (assign, nonatomic) NSRange currentRange;
 
++ (instancetype)sharedModel;
+
+- (void)loadText:(NSString *)text completion:(void(^)(void))completion;
+
+- (void)updateFontCompletion:(void(^)(void))completion;
 @end
