@@ -139,7 +139,7 @@
 - (BottomMenu *)bottomMenu {
     if (!_bottomMenu) {
         _bottomMenu = [BottomMenu bottomMenu];
-        _bottomMenu.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 58, [UIScreen mainScreen].bounds.size.width, 58);
+        _bottomMenu.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 44, [UIScreen mainScreen].bounds.size.width, 44);
     }
     return _bottomMenu;
 }
@@ -182,7 +182,7 @@
     self.menuIsShow = NO;
     [UIView animateWithDuration:0.3 animations:^{
         self.topMenu.frame = CGRectMake(0, -58, self.topMenu.bounds.size.width, self.topMenu.bounds.size.height);
-        self.bottomMenu.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].applicationFrame.size.width, 58);
+        self.bottomMenu.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].applicationFrame.size.width, 44);
     } completion:^(BOOL finished){
         self.topMenu.hidden = YES;
         self.bottomMenu.hidden = YES;
@@ -198,7 +198,7 @@
     self.bottomMenu.hidden = NO;
     [UIView animateWithDuration:0.3 animations:^{
         self.topMenu.frame = CGRectMake(0, 0, [UIScreen mainScreen].applicationFrame.size.width, 58);
-        self.bottomMenu.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 58, [UIScreen mainScreen].bounds.size.width, 58);
+        self.bottomMenu.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 44, [UIScreen mainScreen].bounds.size.width, 44);
     } completion:^(BOOL finished){
        
     }];
@@ -223,7 +223,7 @@
 - (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray *)pendingViewControllers {
     self.topMenu.frame = CGRectMake(0, -58, [UIScreen mainScreen].applicationFrame.size.width, 58);
     self.topMenu.hidden = YES;
-    self.bottomMenu.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].applicationFrame.size.width, 58);
+    self.bottomMenu.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].applicationFrame.size.width, 44);
     self.bottomMenu.hidden = YES;
     self.menuIsShow = NO;
 }
