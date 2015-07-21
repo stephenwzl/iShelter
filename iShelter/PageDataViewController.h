@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "WZLPageTextView.h"
+
+static NSString *kUpdatePageNotification = @"kUpdatePageNotification";
+
 @interface PageDataViewController : UIViewController
 @property (strong, nonatomic) id dataObject;
 @property (strong, nonatomic) WZLPageTextView *textView;
 @property (strong, nonatomic) NSDictionary *attributes;
+@property (strong, nonatomic) UILabel *progressLabel;
 
 @property (assign, nonatomic) NSUInteger currentPage;
 @property (assign, nonatomic) NSUInteger totalPage;

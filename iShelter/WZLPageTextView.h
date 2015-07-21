@@ -8,8 +8,8 @@
 //自定义属性文字的绘制
 #import <UIKit/UIKit.h>
 
-@interface WZLPageTextView : UIView
-@property (copy, nonatomic) NSAttributedString *attributedString;
+@interface WZLPageTextView : UITextView
+@property (copy, nonatomic) NSAttributedString *attString;
 
 - (void)setText:(NSAttributedString *)text;
 

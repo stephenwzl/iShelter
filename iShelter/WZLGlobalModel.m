@@ -75,12 +75,13 @@
     }];
 }
 
+//#warning bugtofix 增大文字会超出界限一次 fixed
 #pragma mark setter
 - (void)setFontSize:(CGFloat)fontSize {
     if (fontSize < 12.0) {
         _fontSize = 12.0;
-    }else if (_fontSize > 30.0){
-        _fontSize = 30.0;
+    }else if (_fontSize > 30){
+        _fontSize = 30;
     }else{
         _fontSize = fontSize;
     }

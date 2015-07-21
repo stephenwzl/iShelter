@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		532F48891B5DF7CA00B31349 /* TopMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 532F48881B5DF7CA00B31349 /* TopMenu.xib */; };
+		532F488C1B5DF92E00B31349 /* TopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 532F488B1B5DF92E00B31349 /* TopMenu.m */; };
+		532F488F1B5E294400B31349 /* BottomMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 532F488E1B5E294400B31349 /* BottomMenu.xib */; };
+		532F48921B5E2B8300B31349 /* BottomMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 532F48911B5E2B8300B31349 /* BottomMenu.m */; };
+		532F48941B5E353D00B31349 /* 十年.txt in Resources */ = {isa = PBXBuildFile; fileRef = 532F48931B5E353D00B31349 /* 十年.txt */; };
 		5364E3E21B5C7F370060FF18 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5364E3E11B5C7F370060FF18 /* main.m */; };
 		5364E3E51B5C7F370060FF18 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5364E3E41B5C7F370060FF18 /* AppDelegate.m */; };
 		5364E3EB1B5C7F370060FF18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5364E3E91B5C7F370060FF18 /* Main.storyboard */; };
@@ -16,8 +21,6 @@
 		5364E4071B5C7F8A0060FF18 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5364E4061B5C7F8A0060FF18 /* CollectionViewController.m */; };
 		5364E40B1B5C83E60060FF18 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5364E4091B5C83E60060FF18 /* CollectionViewCell.m */; };
 		5364E40C1B5C83E60060FF18 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5364E40A1B5C83E60060FF18 /* CollectionViewCell.xib */; };
-		5364E4121B5C91A30060FF18 /* 钢铁是怎样炼成的.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5364E40E1B5C91A20060FF18 /* 钢铁是怎样炼成的.txt */; };
-		5364E4131B5C91A30060FF18 /* 百年孤独.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5364E40F1B5C91A30060FF18 /* 百年孤独.txt */; };
 		5364E4141B5C91A30060FF18 /* 左耳.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5364E4101B5C91A30060FF18 /* 左耳.txt */; };
 		5364E4151B5C91A30060FF18 /* 沙漏.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5364E4111B5C91A30060FF18 /* 沙漏.txt */; };
 		5364E41B1B5CC1D90060FF18 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5364E41A1B5CC1D90060FF18 /* PageViewController.m */; };
@@ -40,6 +43,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		532F48881B5DF7CA00B31349 /* TopMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopMenu.xib; sourceTree = "<group>"; };
+		532F488A1B5DF92E00B31349 /* TopMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopMenu.h; sourceTree = "<group>"; };
+		532F488B1B5DF92E00B31349 /* TopMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopMenu.m; sourceTree = "<group>"; };
+		532F488E1B5E294400B31349 /* BottomMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BottomMenu.xib; sourceTree = "<group>"; };
+		532F48901B5E2B8300B31349 /* BottomMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottomMenu.h; sourceTree = "<group>"; };
+		532F48911B5E2B8300B31349 /* BottomMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BottomMenu.m; sourceTree = "<group>"; };
+		532F48931B5E353D00B31349 /* 十年.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "十年.txt"; sourceTree = "<group>"; };
 		5364E3DC1B5C7F370060FF18 /* iShelter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iShelter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5364E3E01B5C7F370060FF18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5364E3E11B5C7F370060FF18 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -56,8 +66,6 @@
 		5364E4081B5C83E60060FF18 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		5364E4091B5C83E60060FF18 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		5364E40A1B5C83E60060FF18 /* CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
-		5364E40E1B5C91A20060FF18 /* 钢铁是怎样炼成的.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "钢铁是怎样炼成的.txt"; sourceTree = "<group>"; };
-		5364E40F1B5C91A30060FF18 /* 百年孤独.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "百年孤独.txt"; sourceTree = "<group>"; };
 		5364E4101B5C91A30060FF18 /* 左耳.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "左耳.txt"; sourceTree = "<group>"; };
 		5364E4111B5C91A30060FF18 /* 沙漏.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "沙漏.txt"; sourceTree = "<group>"; };
 		5364E4191B5CC1D90060FF18 /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
@@ -94,6 +102,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		532F488D1B5E115000B31349 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				532F48881B5DF7CA00B31349 /* TopMenu.xib */,
+				532F488A1B5DF92E00B31349 /* TopMenu.h */,
+				532F488B1B5DF92E00B31349 /* TopMenu.m */,
+				532F488E1B5E294400B31349 /* BottomMenu.xib */,
+				532F48901B5E2B8300B31349 /* BottomMenu.h */,
+				532F48911B5E2B8300B31349 /* BottomMenu.m */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
 		5364E3D31B5C7F370060FF18 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +153,7 @@
 				5364E42F1B5CE61F0060FF18 /* PageModelViewController.m */,
 				5364E40D1B5C87E40060FF18 /* CollectionViewCell */,
 				5364E4271B5CD9D50060FF18 /* WZL */,
+				532F488D1B5E115000B31349 /* views */,
 			);
 			path = iShelter;
 			sourceTree = "<group>";
@@ -139,8 +161,7 @@
 		5364E3DF1B5C7F370060FF18 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5364E40E1B5C91A20060FF18 /* 钢铁是怎样炼成的.txt */,
-				5364E40F1B5C91A30060FF18 /* 百年孤独.txt */,
+				532F48931B5E353D00B31349 /* 十年.txt */,
 				5364E4101B5C91A30060FF18 /* 左耳.txt */,
 				5364E4111B5C91A30060FF18 /* 沙漏.txt */,
 				5364E3E01B5C7F370060FF18 /* Info.plist */,
@@ -270,13 +291,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5364E3EB1B5C7F370060FF18 /* Main.storyboard in Resources */,
+				532F488F1B5E294400B31349 /* BottomMenu.xib in Resources */,
 				5364E3F01B5C7F370060FF18 /* LaunchScreen.xib in Resources */,
+				532F48891B5DF7CA00B31349 /* TopMenu.xib in Resources */,
+				532F48941B5E353D00B31349 /* 十年.txt in Resources */,
 				5364E40C1B5C83E60060FF18 /* CollectionViewCell.xib in Resources */,
 				5364E3ED1B5C7F370060FF18 /* Images.xcassets in Resources */,
 				5364E4151B5C91A30060FF18 /* 沙漏.txt in Resources */,
-				5364E4131B5C91A30060FF18 /* 百年孤独.txt in Resources */,
 				5364E4141B5C91A30060FF18 /* 左耳.txt in Resources */,
-				5364E4121B5C91A30060FF18 /* 钢铁是怎样炼成的.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5364E4211B5CD8320060FF18 /* WZLPageTextView.m in Sources */,
+				532F48921B5E2B8300B31349 /* BottomMenu.m in Sources */,
 				5364E3E51B5C7F370060FF18 /* AppDelegate.m in Sources */,
 				5364E42D1B5CE4D80060FF18 /* WZLGlobalModel.m in Sources */,
 				5364E4331B5CEA540060FF18 /* NSString+WZLPaging.m in Sources */,
@@ -302,6 +325,7 @@
 				5364E42A1B5CE2D10060FF18 /* PageDataViewController.m in Sources */,
 				5364E4301B5CE61F0060FF18 /* PageModelViewController.m in Sources */,
 				5364E40B1B5C83E60060FF18 /* CollectionViewCell.m in Sources */,
+				532F488C1B5DF92E00B31349 /* TopMenu.m in Sources */,
 				5364E41B1B5CC1D90060FF18 /* PageViewController.m in Sources */,
 				5364E4071B5C7F8A0060FF18 /* CollectionViewController.m in Sources */,
 			);
@@ -500,6 +524,7 @@
 				5364E4011B5C7F370060FF18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5364E4021B5C7F370060FF18 /* Build configuration list for PBXNativeTarget "iShelterTests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +533,7 @@
 				5364E4041B5C7F370060FF18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

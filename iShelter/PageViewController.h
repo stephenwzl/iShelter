@@ -7,8 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+@protocol FontAdjustDelegate <NSObject>
+
+- (void)adjustRangeArrayForText;
+
+@end
 
 @interface PageViewController : UIPageViewController
+@property (assign, nonatomic) id<FontAdjustDelegate> fontdelegate;
 
 - (void)loadText:(NSString *)text;
 @end
+

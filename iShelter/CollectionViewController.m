@@ -42,7 +42,7 @@ static NSString * const reuseIdentifier = @"Cell";
 - (NSMutableArray *)bookFiles {
     if (_bookFiles == nil) {
 //        [self getBooks];
-        _bookFiles = [NSMutableArray arrayWithArray:@[@"沙漏",@"百年孤独",@"左耳",@"钢铁是怎样炼成的"]];
+        _bookFiles = [NSMutableArray arrayWithArray:@[@"沙漏",@"左耳",@"十年"]];
     }
     return _bookFiles;
 }
@@ -53,8 +53,8 @@ static NSString * const reuseIdentifier = @"Cell";
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    NSNumber *index = sender;
-//    [[NSUserDefaults standardUserDefaults] setObject:self.bookFiles[index.integerValue] forKey:@"bookName"];
+    NSNumber *index = sender;
+    [[NSUserDefaults standardUserDefaults] setObject:self.bookFiles[index.integerValue] forKey:@"bookName"];
 }
 
 
