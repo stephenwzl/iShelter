@@ -10,4 +10,5 @@
 
 @interface PageViewController : UIPageViewController
 
+- (void)loadText:(NSString *)text;
 @end

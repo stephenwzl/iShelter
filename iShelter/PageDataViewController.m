@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:_textView];
+    [self.view addSubview:self.textView];
     //auto layout
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-10-[_textView]-10-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_textView)]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-40-[_textView]-40-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_textView)]];
