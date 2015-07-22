@@ -33,6 +33,8 @@
 		5364E4331B5CEA540060FF18 /* NSString+WZLPaging.m in Sources */ = {isa = PBXBuildFile; fileRef = 5364E4321B5CEA540060FF18 /* NSString+WZLPaging.m */; };
 		538840B41B5F2D6800E48081 /* WZLDataUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 538840B31B5F2D6800E48081 /* WZLDataUtils.m */; };
 		538840B71B5F73B000E48081 /* bookMarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 538840B61B5F73B000E48081 /* bookMarkViewController.m */; };
+		538840BA1B5F94E700E48081 /* ReservedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 538840B91B5F94E700E48081 /* ReservedViewController.m */; };
+		538840BD1B5F96EA00E48081 /* ReservedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 538840BC1B5F96EA00E48081 /* ReservedTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +92,10 @@
 		538840B31B5F2D6800E48081 /* WZLDataUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZLDataUtils.m; sourceTree = "<group>"; };
 		538840B51B5F73B000E48081 /* bookMarkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bookMarkViewController.h; sourceTree = "<group>"; };
 		538840B61B5F73B000E48081 /* bookMarkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = bookMarkViewController.m; sourceTree = "<group>"; };
+		538840B81B5F94E700E48081 /* ReservedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReservedViewController.h; sourceTree = "<group>"; };
+		538840B91B5F94E700E48081 /* ReservedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReservedViewController.m; sourceTree = "<group>"; };
+		538840BB1B5F96EA00E48081 /* ReservedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReservedTableViewCell.h; sourceTree = "<group>"; };
+		538840BC1B5F96EA00E48081 /* ReservedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReservedTableViewCell.m; sourceTree = "<group>"; };
 		65D68D5F7741E7206A8E5AF5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,9 +168,12 @@
 				5364E41A1B5CC1D90060FF18 /* PageViewController.m */,
 				538840B51B5F73B000E48081 /* bookMarkViewController.h */,
 				538840B61B5F73B000E48081 /* bookMarkViewController.m */,
+				538840B81B5F94E700E48081 /* ReservedViewController.h */,
+				538840B91B5F94E700E48081 /* ReservedViewController.m */,
 				5364E40D1B5C87E40060FF18 /* CollectionViewCell */,
 				5364E4271B5CD9D50060FF18 /* WZL */,
 				532F488D1B5E115000B31349 /* views */,
+				538840BE1B5F96F100E48081 /* TableViewCell */,
 			);
 			path = iShelter;
 			sourceTree = "<group>";
@@ -225,6 +234,15 @@
 				538840B31B5F2D6800E48081 /* WZLDataUtils.m */,
 			);
 			name = WZL;
+			sourceTree = "<group>";
+		};
+		538840BE1B5F96F100E48081 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				538840BB1B5F96EA00E48081 /* ReservedTableViewCell.h */,
+				538840BC1B5F96EA00E48081 /* ReservedTableViewCell.m */,
+			);
+			name = TableViewCell;
 			sourceTree = "<group>";
 		};
 		58160EACEB6F3CC8811E5550 /* Frameworks */ = {
@@ -385,10 +403,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				538840BA1B5F94E700E48081 /* ReservedViewController.m in Sources */,
 				5364E4211B5CD8320060FF18 /* WZLPageTextView.m in Sources */,
 				532F48921B5E2B8300B31349 /* BottomMenu.m in Sources */,
 				5364E3E51B5C7F370060FF18 /* AppDelegate.m in Sources */,
 				5364E42D1B5CE4D80060FF18 /* WZLGlobalModel.m in Sources */,
+				538840BD1B5F96EA00E48081 /* ReservedTableViewCell.m in Sources */,
 				5364E4331B5CEA540060FF18 /* NSString+WZLPaging.m in Sources */,
 				5364E3E21B5C7F370060FF18 /* main.m in Sources */,
 				5364E42A1B5CE2D10060FF18 /* PageDataViewController.m in Sources */,

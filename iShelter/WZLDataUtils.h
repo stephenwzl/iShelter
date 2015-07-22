@@ -21,7 +21,10 @@
 - (NSMutableArray *)getAllBookMark;
 - (NSMutableArray *)getBookMarkByName:(NSString *)bookName;
 - (void)insertBookMark:(NSDictionary *)dic;
+- (void)deleteBookMark:(NSDictionary *)dic;
 
 - (void)insertReserves:(NSDictionary *)dic;
 - (NSMutableArray *)getAllReserves;
+- (NSMutableArray *)getReserveByName:(NSString *)bookName;
+- (void)deleteReserve:(NSDictionary *)dic;
 @end

@@ -149,6 +149,19 @@
     [self.db close];
 }
 
+- (void)deleteBookMark:(NSDictionary *)dic {
+    [self.db open];
+    NSNumber *page = dic[@"page"];
+    NSString *sql = [NSString stringWithFormat:@"delete from bookMark where name = '%@' and page = %d",dic[@"name"],page.intValue];
+    BOOL success = [self.db executeStatements:sql];
+    if (success) {
+        NSLog(@"删除完成");
+    }else {
+        NSLog(@"删除失败");
+    }
+    [self.db close];
+}
+
 - (void)insertReserves:(NSDictionary *)dic {
     [self.db open];
     NSString *sql = [NSString stringWithFormat:@"insert into reserved (name,content) values ('%@','%@')",dic[@"name"],dic[@"content"]];
@@ -176,6 +189,28 @@
     return outcome;
 }
 
+- (NSMutableArray *)getReserveByName:(NSString *)bookName {
+    NSMutableArray *array = [self getAllReserves];
+    NSMutableArray *outcome = [[NSMutableArray alloc] init];
+    for (NSDictionary *dic in array) {
+        if ([dic[@"name"] isEqualToString:bookName]) {
+            [outcome addObject:dic];
+        }
+    }
+    return outcome;
+}
+
+- (void)deleteReserve:(NSDictionary *)dic {
+    [self.db open];
+    NSString *sql = [NSString stringWithFormat:@"delete from reserved where name = '%@' and content = '%@'",dic[@"name"],dic[@"content"]];
+    BOOL success = [self.db executeStatements:sql];
+    if (success) {
+        NSLog(@"删除成功");
+    }else{
+        NSLog(@"删除失败");
+    }
+     [self.db close];
+}
 #pragma mark lazyload
 - (FMDatabase *)db {
     if (!_db) {

@@ -127,6 +127,10 @@ static NSString *kShowBookMarkPage = @"showBookMarkPage";
     [self performSegueWithIdentifier:@"watchBookMark" sender:nil];
 }
 
+- (void)watchReserved {
+    [self performSegueWithIdentifier:@"watchReserved" sender:nil];
+}
+
 - (void)dealNotification:(NSNotification *)notification {
     NSDictionary *dic = [notification object];
     NSNumber *page = dic[@"page"];
@@ -240,7 +244,7 @@ static NSString *kShowBookMarkPage = @"showBookMarkPage";
     [self.bottomMenu.backBtn addTarget:self action:@selector(backToShelter) forControlEvents:UIControlEventTouchUpInside];
     [self.bottomMenu.chosePage addTarget:self action:@selector(watchBookMark) forControlEvents:UIControlEventTouchUpInside];
     [self.bottomMenu.bookMark addTarget:self action:@selector(addBookMark) forControlEvents:UIControlEventTouchUpInside];
-    
+    [self.bottomMenu.reserve addTarget:self action:@selector(watchReserved) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.bottomMenu];
 }
 

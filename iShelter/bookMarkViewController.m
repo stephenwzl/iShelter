@@ -22,6 +22,7 @@ static NSString *kShowBookMarkPage = @"showBookMarkPage";
     [super viewDidLoad];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+//    [self.tableView setEditing:YES];
     // Do any additional setup after loading the view.
 }
 
@@ -44,11 +45,31 @@ static NSString *kShowBookMarkPage = @"showBookMarkPage";
     return cell;
 }
 
+
+
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewCellEditingStyleDelete;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [[WZLDataUtils sharedDataUtils] deleteBookMark:self.bookMarks[indexPath.row]];
+        [self.bookMarks removeObjectAtIndex:indexPath.row];
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSDictionary *dic = self.bookMarks[indexPath.row];
     [[NSNotificationCenter defaultCenter] postNotificationName:kShowBookMarkPage object:dic];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 #pragma mark lazy load
 - (NSMutableArray *)bookMarks {
     if (!_bookMarks) {
