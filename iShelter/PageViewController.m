@@ -12,11 +12,18 @@
 #import "PageDataViewController.h"
 #import "TopMenu.h"
 #import "BottomMenu.h"
+#import "WZLDataUtils.h"
+static NSString *lastRead = @"lastRead";
+static NSString *Book = @"bookName";
+static NSString *kOpenBookName = @"openBookName";
+static NSString *kShowBookMarkPage = @"showBookMarkPage";
+
 @interface PageViewController ()<FontAdjustDelegate,UIPageViewControllerDelegate>
 
 @property (strong, nonatomic)PageModelViewController *modelController;
 @property (strong, nonatomic)WZLGlobalModel *globalModel;
-
+//@property (strong, nonatomic)NSString *contentstr;
+@property (strong, nonatomic)NSString *bookName;
 @property (strong, nonatomic)UIButton *clickMiddleForMenu;
 @property (strong, nonatomic)UIButton *coverMiddle;
 @property (strong, nonatomic)TopMenu *topMenu;
@@ -29,14 +36,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.menuIsShow = NO;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dealNotification:) name:kShowBookMarkPage object:nil];
     
-    NSString *bookName = [[NSUserDefaults standardUserDefaults] objectForKey:@"bookName"];
-    NSString *content = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:bookName ofType:@"txt"] encoding:NSUTF8StringEncoding error:nil];
+    NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *content = [NSString stringWithContentsOfFile:[path stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.txt",self.bookName]] encoding:NSUTF8StringEncoding error:nil];
     [self loadText:content];
     
-    
-    PageDataViewController *startingViewController = [self.modelController viewControllerAtIndex:0];
-    [self setViewControllers:@[startingViewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
     self.dataSource = self.modelController;
     self.delegate = self;
@@ -44,6 +49,7 @@
     [self setUpTopMenu];
     
     self.fontdelegate = self;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -62,6 +68,11 @@
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-[_clickMiddleForMenu]-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_clickMiddleForMenu)]];
 }
 
+- (IBAction)backToBook:(UIStoryboardSegue *)sender {
+    
+}
+
+
 #pragma mark SEL
 - (void)clickMiddleFormenuAction {
     if (self.menuIsShow) {
@@ -74,7 +85,17 @@
 }
 
 - (void)backToShelter {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    /*返回书架，并且在返回时保存读书位置*/
+    NSDate *date = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    //zzz表示时区，zzz可以删除，这样返回的日期字符将不包含时区信息。
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zzz"];
+    NSString *destDateString = [dateFormatter stringFromDate:date];
+    NSNumber *font = [NSNumber numberWithInt:[WZLGlobalModel sharedModel].fontSize];
+    NSNumber *page = [NSNumber numberWithInteger:[WZLGlobalModel sharedModel].currentPage];
+    NSDictionary *book = @{@"name":self.bookName,@"font":font,@"page":page,@"lastread":destDateString};
+    [[WZLDataUtils sharedDataUtils] updateBook:book];
+    [self performSegueWithIdentifier:@"backToShelter" sender:nil];
 }
 
 - (void)smallerFontAction {
@@ -94,6 +115,27 @@
     if ([self.fontdelegate respondsToSelector:@selector(adjustRangeArrayForText)]) {
         [self.fontdelegate adjustRangeArrayForText];
     }
+}
+
+- (void)addBookMark {
+    NSNumber *page = [NSNumber numberWithInteger:[WZLGlobalModel sharedModel].currentPage];
+    NSDictionary *dic = @{@"name":self.bookName,@"page":page};
+    [[WZLDataUtils sharedDataUtils] insertBookMark:dic];
+}
+
+- (void)watchBookMark {
+    [self performSegueWithIdentifier:@"watchBookMark" sender:nil];
+}
+
+- (void)dealNotification:(NSNotification *)notification {
+    NSDictionary *dic = [notification object];
+    NSNumber *page = dic[@"page"];
+    [WZLGlobalModel sharedModel].currentPage = page.intValue;
+    [self setPageIndex:[WZLGlobalModel sharedModel].currentPage ];
+    [self.view bringSubviewToFront:self.clickMiddleForMenu];
+    [self.view bringSubviewToFront:self.topMenu];
+    [self.view bringSubviewToFront:self.bottomMenu];
+    [self.view bringSubviewToFront:self.coverMiddle];
 }
 
 #pragma mark lazy load
@@ -130,7 +172,7 @@
 
 - (UIButton *)coverMiddle {
     if (!_coverMiddle) {
-        _coverMiddle = [[UIButton alloc] initWithFrame:CGRectMake(0, 58, [UIScreen mainScreen].applicationFrame.size.width, self.view.frame.size.height - 58*2)];
+        _coverMiddle = [[UIButton alloc] initWithFrame:CGRectMake(0, 58, [UIScreen mainScreen].applicationFrame.size.width, self.view.frame.size.height - 58 - 44)];
         _coverMiddle.backgroundColor = [UIColor clearColor];
     }
     return _coverMiddle;
@@ -144,10 +186,24 @@
     return _bottomMenu;
 }
 
+- (NSString *)bookName {
+    if (!_bookName) {
+        _bookName = [[NSUserDefaults standardUserDefaults] objectForKey:Book];
+    }
+    return _bookName;
+}
+
 #pragma mark implementation method
 - (void)loadText:(NSString *)text {
     //确保每次打开的书本字体不受前一次影响
-    [WZLGlobalModel sharedModel].fontSize = 17;
+    NSDictionary *book = [[WZLDataUtils sharedDataUtils] getBookByName:self.bookName];
+     [WZLGlobalModel sharedModel].fontSize = 17;
+    if (book != nil) {
+        NSNumber *font = book[@"font"];
+        NSNumber *page = book[@"page"];
+        [WZLGlobalModel sharedModel].fontSize = font.intValue;
+        [WZLGlobalModel sharedModel].currentPage = page.intValue;
+    }
     [self.globalModel loadText:text completion:^{
         self.modelController.text = self.globalModel.text;
         self.modelController.attributes = self.globalModel.attributes;
@@ -161,6 +217,17 @@
     [self setViewControllers:@[[self.modelController viewControllerAtIndex:index]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
 }
 
+//截屏代码
+- (UIImage *) captureScreen {
+    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
+    CGRect rect = [keyWindow bounds];
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [keyWindow.layer renderInContext:context];
+    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return img;
+}
 
 #pragma mark menuView
 - (void)setUpTopMenu {
@@ -171,8 +238,8 @@
     
     [self.view addSubview:self.topMenu];
     [self.bottomMenu.backBtn addTarget:self action:@selector(backToShelter) forControlEvents:UIControlEventTouchUpInside];
-//    [self.bottomMenu.reserve addTarget:self action:<#(SEL)#> forControlEvents:UIControlEventTouchUpInside];
-//    [self.bottomMenu.bookMark addTarget:self action:<#(SEL)#> forControlEvents:UIControlEventTouchUpInside];
+    [self.bottomMenu.chosePage addTarget:self action:@selector(watchBookMark) forControlEvents:UIControlEventTouchUpInside];
+    [self.bottomMenu.bookMark addTarget:self action:@selector(addBookMark) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:self.bottomMenu];
 }
@@ -235,4 +302,6 @@
     self.doubleSided = NO;
     return UIPageViewControllerSpineLocationMin;
 }
+
+#pragma mark UIStoryboard
 @end

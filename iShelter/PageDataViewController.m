@@ -8,6 +8,7 @@
 
 #import "PageDataViewController.h"
 #import "WZLGlobalModel.h"
+#import "WZLDataUtils.h"
 @interface PageDataViewController ()
 
 @end
@@ -26,8 +27,17 @@
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_progressLabel]-8-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_progressLabel)]];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateProgress) name:kUpdatePageNotification object:nil];
+    UIMenuItem *menuItem = [[UIMenuItem alloc] initWithTitle:@"收藏" action:@selector(reserveText)];
+    UIMenuController *mvc = [UIMenuController sharedMenuController];
+    [mvc setMenuItems:@[menuItem]];
 }
 
+- (void)reserveText {
+//    NSLog(@"%@",[self.textView.attributedText.string substringWithRange:self.textView.selectedRange]);
+    NSDictionary *dic = @{@"name":[[NSUserDefaults standardUserDefaults] objectForKey:@"bookName"],@"content":[self.textView.attributedText.string substringWithRange:self.textView.selectedRange]};
+    [[WZLDataUtils sharedDataUtils] insertReserves:dic];
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

@@ -6,15 +6,12 @@
 //  Copyright (c) 2015年 wangzhilong. All rights reserved.
 //
 
-#pragma mark - works
-//写一个简单小说阅读器项目，支持前后滑动翻页和点击翻页，能保存书签和上次阅读记录，长按画重点，
-//改变字体大小等功能
 
-#pragma mark - TODO 7.20
-//重写UIView，实现属性文字绘制 CoreText 
 
 #import "CollectionViewController.h"
 #import "CollectionViewCell.h"
+#import "WZLDataUtils.h"
+static NSString *kOpenBookName = @"openBookName";
 @interface CollectionViewController ()
 
 @property (strong, nonatomic) NSMutableArray *bookFiles;
@@ -42,7 +39,7 @@ static NSString * const reuseIdentifier = @"Cell";
 - (NSMutableArray *)bookFiles {
     if (_bookFiles == nil) {
 //        [self getBooks];
-        _bookFiles = [NSMutableArray arrayWithArray:@[@"沙漏",@"左耳",@"十年"]];
+        _bookFiles = [[WZLDataUtils sharedDataUtils] getAllBooks];
     }
     return _bookFiles;
 }
@@ -54,7 +51,8 @@ static NSString * const reuseIdentifier = @"Cell";
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NSNumber *index = sender;
-    [[NSUserDefaults standardUserDefaults] setObject:self.bookFiles[index.integerValue] forKey:@"bookName"];
+    [[NSUserDefaults standardUserDefaults] setObject:self.bookFiles[index.integerValue][@"name"] forKey:@"bookName"];
+    [[NSNotificationCenter defaultCenter]postNotificationName:kOpenBookName object:self.bookFiles[index.integerValue][@"name"] ];
 }
 
 
@@ -72,7 +70,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    cell.bookTitle.text = self.bookFiles[indexPath.item];
+    cell.bookTitle.text = self.bookFiles[indexPath.item][@"name"];
 
     return cell;
 }
@@ -92,5 +90,11 @@ static NSString * const reuseIdentifier = @"Cell";
     flowLayout.minimumLineSpacing = 16;
     flowLayout.sectionInset = UIEdgeInsetsMake(10, space, 10, space);
     self.collectionView.collectionViewLayout = flowLayout;
+}
+
+#pragma mark Segue
+- (IBAction)backToShelter:(UIStoryboardSegue *)sender {
+    self.bookFiles = [[WZLDataUtils sharedDataUtils] getAllBooks];
+    [self.collectionView reloadData];
 }
 @end

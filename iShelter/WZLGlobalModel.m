@@ -89,6 +89,5 @@
 
 - (void)setCurrentRange:(NSRange)currentRange {
     _currentRange = currentRange;
-    NSLog(@"%@",NSStringFromRange(currentRange));
 }
 @end
