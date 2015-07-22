@@ -177,21 +177,21 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="reserved" rowHeight="141" id="XLb-HH-HCo" customClass="ReservedTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="reserved" id="XLb-HH-HCo" customClass="ReservedTableViewCell">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XLb-HH-HCo" id="0yN-Y3-cvo">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWv-HO-AdQ">
-                                                    <rect key="frame" x="108" y="8" width="484" height="124"/>
+                                                    <rect key="frame" x="8" y="46" width="584" height="94"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aw1-O7-JXo">
-                                                    <rect key="frame" x="8" y="8" width="100" height="124"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aw1-O7-JXo">
+                                                    <rect key="frame" x="8" y="8" width="584" height="30"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="100" id="7pc-KW-BYK"/>
+                                                        <constraint firstAttribute="height" constant="30" id="xCH-QO-ILU"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -199,14 +199,20 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="aWv-HO-AdQ" secondAttribute="trailing" id="JDI-yY-6sU"/>
-                                                <constraint firstItem="aWv-HO-AdQ" firstAttribute="bottom" secondItem="0yN-Y3-cvo" secondAttribute="bottomMargin" id="YSx-3B-yWF"/>
-                                                <constraint firstItem="aw1-O7-JXo" firstAttribute="top" secondItem="0yN-Y3-cvo" secondAttribute="topMargin" id="Ybh-Lz-DJO"/>
-                                                <constraint firstItem="aw1-O7-JXo" firstAttribute="bottom" secondItem="0yN-Y3-cvo" secondAttribute="bottomMargin" id="ips-ad-ZT2"/>
-                                                <constraint firstItem="aWv-HO-AdQ" firstAttribute="leading" secondItem="aw1-O7-JXo" secondAttribute="trailing" id="lT2-df-ljd"/>
-                                                <constraint firstItem="aWv-HO-AdQ" firstAttribute="top" secondItem="0yN-Y3-cvo" secondAttribute="topMargin" id="rI6-YF-fer"/>
-                                                <constraint firstItem="aw1-O7-JXo" firstAttribute="leading" secondItem="0yN-Y3-cvo" secondAttribute="leadingMargin" id="sAo-nR-Ogn"/>
+                                                <constraint firstItem="aWv-HO-AdQ" firstAttribute="trailing" secondItem="0yN-Y3-cvo" secondAttribute="trailingMargin" id="7Xx-gj-tsK"/>
+                                                <constraint firstItem="aWv-HO-AdQ" firstAttribute="top" secondItem="aw1-O7-JXo" secondAttribute="bottom" constant="8" id="Con-Xx-Fqj"/>
+                                                <constraint firstItem="aw1-O7-JXo" firstAttribute="top" secondItem="0yN-Y3-cvo" secondAttribute="topMargin" id="Cte-iv-PyS"/>
+                                                <constraint firstItem="aWv-HO-AdQ" firstAttribute="top" secondItem="0yN-Y3-cvo" secondAttribute="topMargin" constant="38" id="JcH-Sz-9aW"/>
+                                                <constraint firstItem="aw1-O7-JXo" firstAttribute="leading" secondItem="0yN-Y3-cvo" secondAttribute="leadingMargin" id="TaQ-jq-czw"/>
+                                                <constraint firstItem="aw1-O7-JXo" firstAttribute="trailing" secondItem="0yN-Y3-cvo" secondAttribute="trailingMargin" id="kDa-9e-WlJ"/>
+                                                <constraint firstItem="aWv-HO-AdQ" firstAttribute="leading" secondItem="0yN-Y3-cvo" secondAttribute="leadingMargin" id="nak-MX-eVs"/>
+                                                <constraint firstItem="aWv-HO-AdQ" firstAttribute="bottom" secondItem="0yN-Y3-cvo" secondAttribute="bottomMargin" constant="8" id="zx6-nZ-aGz"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="Con-Xx-Fqj"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="contentLabel" destination="aWv-HO-AdQ" id="0w9-lW-b4S"/>
