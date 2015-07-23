@@ -87,6 +87,8 @@ static NSString *kShowBookMarkPage = @"showBookMarkPage";
 }
 
 - (void)backToShelter {
+    //提供最近阅读的选项，方便封面变化
+    [[NSUserDefaults standardUserDefaults] setObject:self.bookName forKey:@"recentRead"];
     /*返回书架，并且在返回时保存读书位置*/
     NSDate *date = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -126,7 +128,8 @@ static NSString *kShowBookMarkPage = @"showBookMarkPage";
     UIViewController *vc = self.viewControllers[0];
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:vc.view animated:YES];
     hud.animationType = MBProgressHUDAnimationZoom;
-    hud.mode = MBProgressHUDModeText;
+    hud.mode = MBProgressHUDModeCustomView;
+    hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ok"]];
     hud.labelText = @"添加完成";
     [hud performSelector:@selector(removeFromSuperview) withObject:nil afterDelay:1];
     

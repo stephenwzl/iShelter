@@ -39,8 +39,9 @@
     NSDictionary *dic = @{@"name":[[NSUserDefaults standardUserDefaults] objectForKey:@"bookName"],@"content":[self.textView.attributedText.string substringWithRange:self.textView.selectedRange]};
     [[WZLDataUtils sharedDataUtils] insertReserves:dic];
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.mode = MBProgressHUDModeText;
+    hud.mode = MBProgressHUDModeCustomView;
     hud.labelText = @"收藏成功";
+    hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ok"]];
     [hud performSelector:@selector(removeFromSuperview) withObject:nil afterDelay:1.0];
     [self hightLightReserved];
 }
