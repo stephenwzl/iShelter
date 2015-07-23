@@ -13,6 +13,7 @@
 		532F488F1B5E294400B31349 /* BottomMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 532F488E1B5E294400B31349 /* BottomMenu.xib */; };
 		532F48921B5E2B8300B31349 /* BottomMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 532F48911B5E2B8300B31349 /* BottomMenu.m */; };
 		532F48941B5E353D00B31349 /* 十年.txt in Resources */ = {isa = PBXBuildFile; fileRef = 532F48931B5E353D00B31349 /* 十年.txt */; };
+		53452EC21B6073DF0091F523 /* ReservedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53452EC11B6073DF0091F523 /* ReservedTableViewCell.xib */; };
 		5364E3E21B5C7F370060FF18 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5364E3E11B5C7F370060FF18 /* main.m */; };
 		5364E3E51B5C7F370060FF18 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5364E3E41B5C7F370060FF18 /* AppDelegate.m */; };
 		5364E3EB1B5C7F370060FF18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5364E3E91B5C7F370060FF18 /* Main.storyboard */; };
@@ -57,6 +58,7 @@
 		532F48901B5E2B8300B31349 /* BottomMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottomMenu.h; sourceTree = "<group>"; };
 		532F48911B5E2B8300B31349 /* BottomMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BottomMenu.m; sourceTree = "<group>"; };
 		532F48931B5E353D00B31349 /* 十年.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "十年.txt"; sourceTree = "<group>"; };
+		53452EC11B6073DF0091F523 /* ReservedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReservedTableViewCell.xib; sourceTree = "<group>"; };
 		5364E3DC1B5C7F370060FF18 /* iShelter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iShelter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5364E3E01B5C7F370060FF18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5364E3E11B5C7F370060FF18 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 			children = (
 				538840BB1B5F96EA00E48081 /* ReservedTableViewCell.h */,
 				538840BC1B5F96EA00E48081 /* ReservedTableViewCell.m */,
+				53452EC11B6073DF0091F523 /* ReservedTableViewCell.xib */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				5364E3F01B5C7F370060FF18 /* LaunchScreen.xib in Resources */,
 				532F48891B5DF7CA00B31349 /* TopMenu.xib in Resources */,
 				532F48941B5E353D00B31349 /* 十年.txt in Resources */,
+				53452EC21B6073DF0091F523 /* ReservedTableViewCell.xib in Resources */,
 				5364E40C1B5C83E60060FF18 /* CollectionViewCell.xib in Resources */,
 				5364E3ED1B5C7F370060FF18 /* Images.xcassets in Resources */,
 				5364E4151B5C91A30060FF18 /* 沙漏.txt in Resources */,

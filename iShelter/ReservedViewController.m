@@ -9,19 +9,23 @@
 #import "ReservedViewController.h"
 #import "WZLDataUtils.h"
 #import "ReservedTableViewCell.h"
+#import "NSString+WZLPaging.h"
+static NSString *reuserID = @"reserved";
 @interface ReservedViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *reserves;
-@property (strong, nonatomic) ReservedTableViewCell *protocolCell;
+@property (strong, nonatomic) UITableViewCell *protocolCell;
 @end
 
 @implementation ReservedViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //register Cell
+    [self.tableView registerNib:[UINib nibWithNibName:@"ReservedTableViewCell" bundle:nil] forCellReuseIdentifier:reuserID];
+     self.protocolCell = [self.tableView dequeueReusableCellWithIdentifier:reuserID];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,19 +38,18 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ReservedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reserved"];
-    cell.titleLabel.text = self.reserves[indexPath.row][@"name"];
+    ReservedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuserID];
     cell.contentLabel.text = self.reserves[indexPath.row][@"content"];
     return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ReservedTableViewCell *cell = self.protocolCell;
-    cell.titleLabel.text = self.reserves[indexPath.row][@"name"];
-    cell.contentLabel.text = self.reserves[indexPath.row][@"content"];
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    ReservedTableViewCell *cell =(ReservedTableViewCell *) self.protocolCell;
+    NSString *str = self.reserves[indexPath.row][@"content"];
+    cell.contentLabel.text = str;
     CGSize size = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-    return 1 + size.height;
-    
+    NSLog(@"h=%f", size.height + 1);
+    return 1  + size.height;
 }
 
 - (NSMutableArray *)reserves {
@@ -56,11 +59,6 @@
     return _reserves;
 }
 
-- (ReservedTableViewCell *)protocolCell {
-    if (_protocolCell) {
-        _protocolCell = [self.tableView dequeueReusableCellWithIdentifier:@"reserved"];
-    }
-    return _protocolCell;
-}
+
 
 @end

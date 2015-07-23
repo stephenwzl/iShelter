@@ -35,8 +35,20 @@
         CFRelease(frame);
         CFRelease(childFramesetter);
     } while (rangeIndex < attributedString.length && attributedString.length > 0);
-
+    
     return resultRange;
+    
+}
 
+- (CGSize)calculateSize:(CGSize)size font:(UIFont *)font {
+    CGSize expectedLabelSize = CGSizeZero;
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
+    NSDictionary *attributes = @{NSFontAttributeName:font, NSParagraphStyleAttributeName:paragraphStyle.copy};
+    
+    expectedLabelSize = [self boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil].size;
+    
+    
+    return CGSizeMake(ceil(expectedLabelSize.width), ceil(expectedLabelSize.height));
 }
 @end

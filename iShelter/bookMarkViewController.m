@@ -33,6 +33,13 @@ static NSString *kShowBookMarkPage = @"showBookMarkPage";
 - (IBAction)exit:(id)sender {
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    #pragma mark bug fix
+    //bug fix tableview在editing情况下viewcontroller跳转会崩溃
+    [self.tableView setEditing:NO];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.bookMarks.count;
 }

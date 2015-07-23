@@ -15,5 +15,6 @@
  */
 
 - (NSArray *)pageWithAttributes:(NSDictionary *)attributes constrainToSize:(CGSize)size;
-
+//计算UILabel高度
+- (CGSize)calculateSize:(CGSize)size font:(UIFont *)font;
 @end
