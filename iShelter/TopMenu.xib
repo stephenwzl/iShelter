@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -10,14 +10,13 @@
             <rect key="frame" x="0.0" y="-5" width="600" height="58"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qo-tG-ST2">
-                    <rect key="frame" x="8" y="13" width="46" height="45"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qo-tG-ST2">
+                    <rect key="frame" x="8" y="18" width="32" height="32"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="46" id="1Wr-2V-Owf"/>
-                        <constraint firstAttribute="height" constant="45" id="Mbx-UY-QtR"/>
+                        <constraint firstAttribute="width" constant="32" id="1Wr-2V-Owf"/>
+                        <constraint firstAttribute="height" constant="32" id="Mbx-UY-QtR"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <state key="normal" title="书库">
+                    <state key="normal" image="bright_moon">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -51,7 +50,7 @@
             <constraints>
                 <constraint firstItem="3nJ-nP-PZl" firstAttribute="leading" secondItem="NaA-O5-I71" secondAttribute="trailing" constant="8" id="2hy-Uc-ueh"/>
                 <constraint firstAttribute="centerY" secondItem="NaA-O5-I71" secondAttribute="centerY" id="9cr-Wy-gi7"/>
-                <constraint firstAttribute="bottom" secondItem="7qo-tG-ST2" secondAttribute="bottom" id="AnX-Ol-HVn"/>
+                <constraint firstAttribute="bottom" secondItem="7qo-tG-ST2" secondAttribute="bottom" constant="8" id="AnX-Ol-HVn"/>
                 <constraint firstAttribute="centerY" secondItem="7qo-tG-ST2" secondAttribute="centerY" id="Kqj-nL-5h6"/>
                 <constraint firstAttribute="centerY" secondItem="3nJ-nP-PZl" secondAttribute="centerY" id="N9H-Rf-BKK"/>
                 <constraint firstAttribute="trailing" secondItem="3nJ-nP-PZl" secondAttribute="trailing" id="QvS-PB-Vsw"/>
@@ -75,4 +74,7 @@
             <point key="canvasLocation" x="657" y="482"/>
         </view>
     </objects>
+    <resources>
+        <image name="bright_moon" width="50" height="50"/>
+    </resources>
 </document>
