@@ -20,4 +20,5 @@ static NSString *kUpdatePageNotification = @"kUpdatePageNotification";
 @property (assign, nonatomic) NSUInteger currentPage;
 @property (assign, nonatomic) NSUInteger totalPage;
 
+@property (assign, nonatomic) BOOL isNight;
 @end

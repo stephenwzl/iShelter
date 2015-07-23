@@ -22,8 +22,8 @@
     [self.view addSubview:self.textView];
     [self.view addSubview:self.progressLabel];
     //auto layout
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-10-[_textView]-10-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_textView)]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-40-[_textView]-40-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_textView)]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-8-[_textView]-8-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_textView)]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[_textView]-20-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_textView)]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"[_progressLabel]-8-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_progressLabel)]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_progressLabel]-8-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_progressLabel)]];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateProgress) name:kUpdatePageNotification object:nil];
@@ -54,8 +54,20 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.textView setText:[[NSAttributedString alloc] initWithString:self.dataObject attributes:self.attributes]];
+    [self updateSkin];
     [self hightLightReserved];
     [self updateProgress];
+}
+
+- (void)updateSkin {
+    
+    if (self.isNight) {
+        self.view.backgroundColor = [[UIColor alloc] initWithRed:(CGFloat)72/255 green:(CGFloat)72/255 blue:(CGFloat)72/255 alpha:1.0];
+        self.textView.backgroundColor = [[UIColor alloc] initWithRed:(CGFloat)72/255 green:(CGFloat)72/255 blue:(CGFloat)72/255 alpha:1.0];
+        NSMutableAttributedString *attstr = [[NSMutableAttributedString alloc] initWithAttributedString:self.textView.attributedText];
+        [attstr addAttribute:NSForegroundColorAttributeName value:[[UIColor alloc] initWithRed:(CGFloat)200/255 green:(CGFloat)200/255 blue:(CGFloat)200/255 alpha:1.0] range:NSMakeRange(0, attstr.string.length)];
+        self.textView.attributedText = attstr;
+    }
 }
 
 - (void)hightLightReserved {

@@ -16,10 +16,13 @@
 @property (assign, nonatomic) CGFloat fontSize;
 @property (assign, nonatomic) NSInteger currentPage;
 @property (assign, nonatomic) NSRange currentRange;
+@property (assign, nonatomic) BOOL isNightMode;
 
 + (instancetype)sharedModel;
 
 - (void)loadText:(NSString *)text completion:(void(^)(void))completion;
 
 - (void)updateFontCompletion:(void(^)(void))completion;
+
+- (void)updateNightMode:(BOOL)isNight completion:(void (^)(void))completion;
 @end

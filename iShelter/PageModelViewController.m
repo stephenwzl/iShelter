@@ -25,6 +25,7 @@
     dataViewController.attributes = self.attributes;
     dataViewController.currentPage = index;
     dataViewController.totalPage = [self.pageData count];
+    dataViewController.isNight = self.isNight;
     //告知全局模型当前页面位置，以便即时更新设置
     [WZLGlobalModel sharedModel].currentPage = index;
     return dataViewController;

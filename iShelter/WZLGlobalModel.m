@@ -50,7 +50,7 @@
     paragraphStyle.alignment = NSTextAlignmentJustified;
     [attributes setValue:paragraphStyle forKey:NSParagraphStyleAttributeName];
     self.attributes = [attributes copy];
-    self.rangeArray = [[self.text pageWithAttributes:self.attributes constrainToSize:CGSizeMake([UIScreen mainScreen].bounds.size.width - 20*2, [UIScreen mainScreen].bounds.size.height - 60*2)] mutableCopy];
+    self.rangeArray = [[self.text pageWithAttributes:self.attributes constrainToSize:CGSizeMake([UIScreen mainScreen].bounds.size.width - 20*2, [UIScreen mainScreen].bounds.size.height - 50*2)] mutableCopy];
     if (completion) {
         completion();
     }
@@ -73,6 +73,13 @@
             completion();
         }
     }];
+}
+
+- (void)updateNightMode:(BOOL)isNight completion:(void (^)(void))completion {
+    self.isNightMode = isNight;
+    if (completion) {
+        completion();
+    }
 }
 
 //#warning bugtofix 增大文字会超出界限一次 fixed

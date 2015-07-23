@@ -12,10 +12,10 @@
 @interface PageModelViewController : NSObject <UIPageViewControllerDataSource>
 
 //@property (weak, nonatomic)PageViewController *readerViewcontroller;
-@property (strong, nonatomic)NSArray *pageData;
+@property (strong, nonatomic) NSArray *pageData;
 @property (strong, nonatomic) NSString *text;
 @property (strong, nonatomic) NSDictionary *attributes;
-
+@property (assign, nonatomic) BOOL isNight;
 - (PageDataViewController *)viewControllerAtIndex:(NSUInteger)index;
 
 - (NSUInteger)indexOfViewController:(PageDataViewController *)viewcontroller;

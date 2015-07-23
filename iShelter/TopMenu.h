@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface TopMenu : UIView
-@property (weak, nonatomic) IBOutlet UIButton *backToShelter;
+
+@property (weak, nonatomic) IBOutlet UISwitch *nightSwitch;
+
 @property (weak, nonatomic) IBOutlet UIButton *smallerFont;
 @property (weak, nonatomic) IBOutlet UIButton *biggerFont;
 

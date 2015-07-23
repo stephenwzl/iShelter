@@ -10,17 +10,6 @@
             <rect key="frame" x="0.0" y="-5" width="600" height="58"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qo-tG-ST2">
-                    <rect key="frame" x="8" y="18" width="32" height="32"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="32" id="1Wr-2V-Owf"/>
-                        <constraint firstAttribute="height" constant="32" id="Mbx-UY-QtR"/>
-                    </constraints>
-                    <state key="normal" image="bright_moon">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3nJ-nP-PZl">
                     <rect key="frame" x="555" y="13" width="45" height="45"/>
                     <constraints>
@@ -45,36 +34,43 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lDv-g9-qnL">
+                    <rect key="frame" x="8" y="19" width="51" height="31"/>
+                    <color key="onTintColor" red="0.0" green="0.4364434834164862" blue="0.87342171717171713" alpha="1" colorSpace="calibratedRGB"/>
+                </switch>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="夜间" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="arn-pB-isv">
+                    <rect key="frame" x="65" y="24" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="3nJ-nP-PZl" firstAttribute="leading" secondItem="NaA-O5-I71" secondAttribute="trailing" constant="8" id="2hy-Uc-ueh"/>
                 <constraint firstAttribute="centerY" secondItem="NaA-O5-I71" secondAttribute="centerY" id="9cr-Wy-gi7"/>
-                <constraint firstAttribute="bottom" secondItem="7qo-tG-ST2" secondAttribute="bottom" constant="8" id="AnX-Ol-HVn"/>
-                <constraint firstAttribute="centerY" secondItem="7qo-tG-ST2" secondAttribute="centerY" id="Kqj-nL-5h6"/>
                 <constraint firstAttribute="centerY" secondItem="3nJ-nP-PZl" secondAttribute="centerY" id="N9H-Rf-BKK"/>
+                <constraint firstItem="lDv-g9-qnL" firstAttribute="leading" secondItem="YT2-fB-Vrq" secondAttribute="leading" constant="8" id="ONw-DC-yvT"/>
+                <constraint firstAttribute="bottom" secondItem="arn-pB-isv" secondAttribute="bottom" constant="13" id="PIx-d6-1xq"/>
                 <constraint firstAttribute="trailing" secondItem="3nJ-nP-PZl" secondAttribute="trailing" id="QvS-PB-Vsw"/>
-                <constraint firstItem="7qo-tG-ST2" firstAttribute="leading" secondItem="YT2-fB-Vrq" secondAttribute="leading" constant="8" id="R4E-Ki-ypE"/>
                 <constraint firstAttribute="bottom" secondItem="NaA-O5-I71" secondAttribute="bottom" id="fNv-Mr-CQd"/>
                 <constraint firstAttribute="bottom" secondItem="3nJ-nP-PZl" secondAttribute="bottom" id="hHe-c1-jLu"/>
+                <constraint firstAttribute="bottom" secondItem="lDv-g9-qnL" secondAttribute="bottom" constant="8" id="jHq-GA-ycE"/>
+                <constraint firstItem="arn-pB-isv" firstAttribute="leading" secondItem="lDv-g9-qnL" secondAttribute="trailing" constant="8" id="oe8-0p-KcA"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
                 <mask key="constraints">
-                    <exclude reference="Kqj-nL-5h6"/>
                     <exclude reference="9cr-Wy-gi7"/>
                     <exclude reference="N9H-Rf-BKK"/>
                 </mask>
             </variation>
             <connections>
-                <outlet property="backToShelter" destination="7qo-tG-ST2" id="i0v-lp-jcB"/>
                 <outlet property="biggerFont" destination="3nJ-nP-PZl" id="OQv-1P-tcq"/>
+                <outlet property="nightSwitch" destination="lDv-g9-qnL" id="BjW-pb-inh"/>
                 <outlet property="smallerFont" destination="NaA-O5-I71" id="zsY-5f-kiI"/>
             </connections>
             <point key="canvasLocation" x="657" y="482"/>
         </view>
     </objects>
-    <resources>
-        <image name="bright_moon" width="50" height="50"/>
-    </resources>
 </document>

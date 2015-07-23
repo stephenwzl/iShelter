@@ -22,15 +22,16 @@ static NSString *kShowBookMarkPage = @"showBookMarkPage";
 
 @interface PageViewController ()<FontAdjustDelegate,UIPageViewControllerDelegate>
 
-@property (strong, nonatomic)PageModelViewController *modelController;
-@property (strong, nonatomic)WZLGlobalModel *globalModel;
-//@property (strong, nonatomic)NSString *contentstr;
-@property (strong, nonatomic)NSString *bookName;
-@property (strong, nonatomic)UIButton *clickMiddleForMenu;
-@property (strong, nonatomic)UIButton *coverMiddle;
-@property (strong, nonatomic)TopMenu *topMenu;
-@property (strong, nonatomic)BottomMenu *bottomMenu;
-@property (assign, nonatomic)BOOL menuIsShow;
+@property (strong, nonatomic) PageModelViewController *modelController;
+@property (strong, nonatomic) WZLGlobalModel *globalModel;
+
+@property (strong, nonatomic) NSString *bookName;
+@property (strong, nonatomic) UIButton *clickMiddleForMenu;
+@property (strong, nonatomic) UIButton *coverMiddle;
+@property (strong, nonatomic) TopMenu *topMenu;
+@property (strong, nonatomic) BottomMenu *bottomMenu;
+@property (assign, nonatomic) BOOL menuIsShow;
+@property (assign, nonatomic) BOOL isNightMode;
 @end
 
 @implementation PageViewController
@@ -38,6 +39,7 @@ static NSString *kShowBookMarkPage = @"showBookMarkPage";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.menuIsShow = NO;
+    self.isNightMode = NO;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dealNotification:) name:kShowBookMarkPage object:nil];
     
     NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
@@ -154,6 +156,19 @@ static NSString *kShowBookMarkPage = @"showBookMarkPage";
     [self.view bringSubviewToFront:self.coverMiddle];
 }
 
+- (void)changeReadMode:(UISwitch *) onoff{
+    [[WZLGlobalModel sharedModel] updateNightMode:onoff.on completion:^{
+        self.modelController.isNight = [WZLGlobalModel sharedModel].isNightMode;
+        [self setPageIndex:[WZLGlobalModel sharedModel].currentPage];
+        [self.view bringSubviewToFront:self.clickMiddleForMenu];
+        [self.view bringSubviewToFront:self.topMenu];
+        [self.view bringSubviewToFront:self.bottomMenu];
+        [self.view bringSubviewToFront:self.coverMiddle];
+    }];
+
+    self.isNightMode = !self.isNightMode;
+}
+
 #pragma mark lazy load
 - (PageModelViewController *)modelController {
     if (!_modelController) {
@@ -248,7 +263,7 @@ static NSString *kShowBookMarkPage = @"showBookMarkPage";
 #pragma mark menuView
 - (void)setUpTopMenu {
     
-    [self.topMenu.backToShelter addTarget:self action:@selector(backToShelter) forControlEvents:UIControlEventTouchUpInside];
+    [self.topMenu.nightSwitch addTarget:self action:@selector(changeReadMode:) forControlEvents:UIControlEventValueChanged];
     [self.topMenu.smallerFont addTarget:self action:@selector(smallerFontAction) forControlEvents:UIControlEventTouchUpInside];
     [self.topMenu.biggerFont addTarget:self action:@selector(biggerFontAction) forControlEvents:UIControlEventTouchUpInside];
     
