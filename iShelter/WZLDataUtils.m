@@ -27,11 +27,6 @@
     self = [super init];
     if (self) {
         [self.db open];
-//        NSString *sql = @"create table books (id integer primary key autoincrement, name text,font integer,page integer,lastread text);CREATE TABLE bookMark (id integer,name text(128),page integer(128) NOT NULL,PRIMARY KEY(id, page)CONSTRAINT 'notchongfu' UNIQUE (name,page) ON CONFLICT REPLACE);CREATE TABLE reserved (id integer PRIMARY KEY AUTOINCREMENT NOT NULL,name text(128),content text(128));";
-//        BOOL success = [self.db executeStatements:sql];
-//        if (success) {
-//            [self copyToSandBox];
-//        }
         [self createTables];
         [self.db close];
     }
@@ -149,7 +144,6 @@
 
 - (NSString *)dbDirectory {
     NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    NSLog(@"%@",docPath);
     return [docPath stringByAppendingPathComponent:@"book.sqlite"];
 }
 

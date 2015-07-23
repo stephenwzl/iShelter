@@ -10,5 +10,6 @@
 
 @interface CollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UILabel *bookTitle;
+@property (weak, nonatomic) IBOutlet UIImageView *coverImg;
 
 @end

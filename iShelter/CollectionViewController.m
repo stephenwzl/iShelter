@@ -71,7 +71,12 @@ static NSString * const reuseIdentifier = @"Cell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     cell.bookTitle.text = self.bookFiles[indexPath.item][@"name"];
-
+    NSString *recentReadName = [[NSUserDefaults standardUserDefaults] objectForKey:@"recentRead"];
+    if ([cell.bookTitle.text isEqualToString: recentReadName]) {
+        cell.coverImg.image = [UIImage imageNamed:@"bookCoverRecent"];
+    }else {
+        cell.coverImg.image = [UIImage imageNamed:@"bookCover"];
+    }
     return cell;
 }
 

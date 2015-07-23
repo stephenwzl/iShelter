@@ -34,7 +34,7 @@
 //    CGContextTranslateCTM(context, 0, self.bounds.size.height);
 //    CGContextScaleCTM(context, 1.0, -1.0);
 //    
-//    CTFramesetterRef childFramesetter = CTFramesetterCreateWithAttributedString((__bridge CFAttributedStringRef)self.attributedString);
+//    CTFramesetterRef childFramesetter = CTFramesetterCreateWithAttributedString((__bridge CFAttributedStringRef)self.attString);
 //    UIBezierPath * bezierPath = [UIBezierPath bezierPathWithRect:rect];
 //    CTFrameRef frame = CTFramesetterCreateFrame(childFramesetter, CFRangeMake(0, 0), bezierPath.CGPath, NULL);
 //    CTFrameDraw(frame, context);

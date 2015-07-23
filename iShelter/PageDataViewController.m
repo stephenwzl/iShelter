@@ -26,7 +26,6 @@
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-40-[_textView]-40-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_textView)]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"[_progressLabel]-8-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_progressLabel)]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_progressLabel]-8-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_progressLabel)]];
-    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateProgress) name:kUpdatePageNotification object:nil];
     UIMenuItem *menuItem = [[UIMenuItem alloc] initWithTitle:@"收藏" action:@selector(reserveText)];
     UIMenuController *mvc = [UIMenuController sharedMenuController];

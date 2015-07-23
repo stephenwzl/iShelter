@@ -50,7 +50,7 @@
     paragraphStyle.alignment = NSTextAlignmentJustified;
     [attributes setValue:paragraphStyle forKey:NSParagraphStyleAttributeName];
     self.attributes = [attributes copy];
-    self.rangeArray = [[self.text pageWithAttributes:self.attributes constrainToSize:CGSizeMake([UIScreen mainScreen].bounds.size.width - 10*2, [UIScreen mainScreen].bounds.size.height - 40*2)] mutableCopy];
+    self.rangeArray = [[self.text pageWithAttributes:self.attributes constrainToSize:CGSizeMake([UIScreen mainScreen].bounds.size.width - 20*2, [UIScreen mainScreen].bounds.size.height - 60*2)] mutableCopy];
     if (completion) {
         completion();
     }
