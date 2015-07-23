@@ -27,15 +27,59 @@
     self = [super init];
     if (self) {
         [self.db open];
-        NSString *sql = @"create table books (id integer primary key autoincrement, name text,font integer,page integer,lastread text);CREATE TABLE bookMark (id integer,name text(128),page integer(128) NOT NULL,PRIMARY KEY(id, page)CONSTRAINT 'notchongfu' UNIQUE (name,page) ON CONFLICT REPLACE);CREATE TABLE reserved (id integer PRIMARY KEY AUTOINCREMENT NOT NULL,name text(128),content text(128));";
-        BOOL success = [self.db executeStatements:sql];
-        if (success) {
-            [self copyToSandBox];
-        }
-        
+//        NSString *sql = @"create table books (id integer primary key autoincrement, name text,font integer,page integer,lastread text);CREATE TABLE bookMark (id integer,name text(128),page integer(128) NOT NULL,PRIMARY KEY(id, page)CONSTRAINT 'notchongfu' UNIQUE (name,page) ON CONFLICT REPLACE);CREATE TABLE reserved (id integer PRIMARY KEY AUTOINCREMENT NOT NULL,name text(128),content text(128));";
+//        BOOL success = [self.db executeStatements:sql];
+//        if (success) {
+//            [self copyToSandBox];
+//        }
+        [self createTables];
         [self.db close];
     }
     return self;
+}
+
+- (void)createTables {
+    if (![self isTableExists:@"books"]) {
+        NSString *sql = @"create table books (id integer primary key autoincrement, name text,font integer,page integer,lastread text);";
+        BOOL success = [self.db executeStatements:sql];
+        if (success) {
+            NSLog(@"创建books表成功");
+            [self copyToSandBox];
+        }
+    }else {
+        NSLog(@"books表已经存在");
+    }
+    if (![self isTableExists:@"bookMark"]) {
+        NSString *sql = @"CREATE TABLE bookMark (id integer,name text(128),page integer(128) NOT NULL,PRIMARY KEY(id, page)CONSTRAINT 'notchongfu' UNIQUE (name,page) ON CONFLICT REPLACE);";
+        BOOL success = [self.db executeStatements:sql];
+        if (success) {
+            NSLog(@"创建bookMark表成功");
+        }
+    }else {
+        NSLog(@"bookMark表已经存在");
+    }
+    if (![self isTableExists:@"reserved"]) {
+        NSString *sql = @"CREATE TABLE reserved (id integer PRIMARY KEY AUTOINCREMENT NOT NULL,name text(128),content text(128));";
+        BOOL success = [self.db executeStatements:sql];
+        if (success) {
+            NSLog(@"创建reserved表成功");
+        }
+    }else {
+        NSLog(@"reserved表已经存在");
+    }
+}
+
+- (BOOL)isTableExists:(NSString *)tableName {
+    [self.db open];
+    FMResultSet *rs = [self.db executeQuery:[NSString stringWithFormat:@"select count(*) as 'count' from sqlite_master where type = 'table' and name = '%@'",tableName]];
+    while ([rs next]) {
+        NSInteger count = [rs intForColumn:@"count"];
+        if (count == 0) {
+            return NO;
+        }
+        return YES;
+    }
+    return NO;
 }
 
 - (BOOL)insertBooks:(NSArray *)books {

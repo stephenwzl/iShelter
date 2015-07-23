@@ -8,6 +8,7 @@
 
 #import "PageModelViewController.h"
 #import "WZLGlobalModel.h"
+#import "WZLDataUtils.h"
 @interface PageModelViewController ()
 
 @end
@@ -24,11 +25,12 @@
     dataViewController.attributes = self.attributes;
     dataViewController.currentPage = index;
     dataViewController.totalPage = [self.pageData count];
-    
     //告知全局模型当前页面位置，以便即时更新设置
     [WZLGlobalModel sharedModel].currentPage = index;
     return dataViewController;
 }
+
+
 
 - (NSUInteger)indexOfViewController:(PageDataViewController *)viewcontroller {
     return [self.pageData indexOfObject:NSStringFromRange([self.text rangeOfString:viewcontroller.dataObject])];

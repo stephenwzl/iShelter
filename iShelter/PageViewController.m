@@ -13,6 +13,8 @@
 #import "TopMenu.h"
 #import "BottomMenu.h"
 #import "WZLDataUtils.h"
+#import "MBProgressHUD.h"
+
 static NSString *lastRead = @"lastRead";
 static NSString *Book = @"bookName";
 static NSString *kOpenBookName = @"openBookName";
@@ -121,6 +123,13 @@ static NSString *kShowBookMarkPage = @"showBookMarkPage";
     NSNumber *page = [NSNumber numberWithInteger:[WZLGlobalModel sharedModel].currentPage];
     NSDictionary *dic = @{@"name":self.bookName,@"page":page};
     [[WZLDataUtils sharedDataUtils] insertBookMark:dic];
+    UIViewController *vc = self.viewControllers[0];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:vc.view animated:YES];
+    hud.animationType = MBProgressHUDAnimationZoom;
+    hud.mode = MBProgressHUDModeText;
+    hud.labelText = @"添加完成";
+    [hud performSelector:@selector(removeFromSuperview) withObject:nil afterDelay:1];
+    
 }
 
 - (void)watchBookMark {

@@ -9,6 +9,7 @@
 #import "PageDataViewController.h"
 #import "WZLGlobalModel.h"
 #import "WZLDataUtils.h"
+#import "MBProgressHUD.h"
 @interface PageDataViewController ()
 
 @end
@@ -30,14 +31,22 @@
     UIMenuItem *menuItem = [[UIMenuItem alloc] initWithTitle:@"收藏" action:@selector(reserveText)];
     UIMenuController *mvc = [UIMenuController sharedMenuController];
     [mvc setMenuItems:@[menuItem]];
+    
 }
 
 - (void)reserveText {
 //    NSLog(@"%@",[self.textView.attributedText.string substringWithRange:self.textView.selectedRange]);
     NSDictionary *dic = @{@"name":[[NSUserDefaults standardUserDefaults] objectForKey:@"bookName"],@"content":[self.textView.attributedText.string substringWithRange:self.textView.selectedRange]};
     [[WZLDataUtils sharedDataUtils] insertReserves:dic];
-    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeText;
+    hud.labelText = @"收藏成功";
+    [hud performSelector:@selector(removeFromSuperview) withObject:nil afterDelay:1.0];
+    [self hightLightReserved];
 }
+
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -45,8 +54,23 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.textView setText:[[NSAttributedString alloc] initWithString:self.dataObject attributes:self.attributes]];
+    [self hightLightReserved];
     [self updateProgress];
 }
+
+- (void)hightLightReserved {
+    NSMutableArray *reserved = [[WZLDataUtils sharedDataUtils] getReserveByName:[[NSUserDefaults standardUserDefaults] objectForKey:@"bookName"]];
+    for (NSDictionary *dic in reserved) {
+        NSString *highLighted = dic[@"content"];
+        NSRange found = [self.textView.attributedText.string rangeOfString:highLighted];
+        if (found.length > 0) {
+            NSMutableAttributedString *attstring = [[NSMutableAttributedString alloc] initWithAttributedString:self.textView.attributedText];
+            [attstring addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range: found];
+            self.textView.attributedText = attstring;
+        }
+    }
+}
+
 
 - (void)updateProgress {
     [self.progressLabel setText:[NSString stringWithFormat:@"%ld/%ld", (long)[WZLGlobalModel sharedModel].currentPage + 1, (long)self.totalPage]];

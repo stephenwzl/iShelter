@@ -4,11 +4,14 @@ PODS:
   - FMDB/common (2.5)
   - FMDB/standard (2.5):
     - FMDB/common
+  - MBProgressHUD (0.9.1)
 
 DEPENDENCIES:
   - FMDB
+  - MBProgressHUD (~> 0.9.1)
 
 SPEC CHECKSUMS:
   FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
 
-COCOAPODS: 0.37.1
+COCOAPODS: 0.37.2
