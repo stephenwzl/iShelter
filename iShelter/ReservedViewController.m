@@ -26,11 +26,21 @@ static NSString *reuserID = @"reserved";
      self.protocolCell = [self.tableView dequeueReusableCellWithIdentifier:reuserID];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    /*
+     *重中之重！！！！
+     *必须给 rowHeight 设置为此值才会自动计算高度！
+     */
+    
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.tableView setEditing:NO];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -48,9 +58,25 @@ static NSString *reuserID = @"reserved";
     NSString *str = self.reserves[indexPath.row][@"content"];
     cell.contentLabel.text = str;
     CGSize size = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-    NSLog(@"h=%f", size.height + 1);
     return 1  + size.height;
 }
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewCellEditingStyleDelete;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    [[WZLDataUtils sharedDataUtils] deleteReserve:self.reserves[indexPath.row]];
+    [self.reserves removeObjectAtIndex:indexPath.row];
+    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    
+}
+
+#pragma mark lazy load
 
 - (NSMutableArray *)reserves {
     if (!_reserves) {
